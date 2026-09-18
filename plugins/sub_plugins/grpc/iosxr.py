@@ -17,10 +17,12 @@ description:
 version_added: "3.3.0"
 """
 
-import importlib.util
+import importlib
 import json
 import os
 import sys
+
+from ansible.errors import AnsibleError
 
 from ansible_collections.ansible.netcommon.plugins.sub_plugins.grpc.base import (
     GrpcBase,
@@ -31,25 +33,20 @@ from ansible_collections.ansible.netcommon.plugins.sub_plugins.grpc.base import 
 class Grpc(GrpcBase):
     def __init__(self, connection):
         super(Grpc, self).__init__(connection)
-        pb_path = os.path.join(
-            os.path.dirname(os.path.realpath(__file__)),
-            "pb",
+        self._ems_grpc_pb2 = importlib.import_module(
+            "ansible_collections.cisco.iosxr.plugins.sub_plugins.grpc.pb.ems_grpc_pb2"
         )
-        pb2_path = os.path.join(pb_path, "ems_grpc_pb2.py")
-        pb2_grpc_path = os.path.join(pb_path, "ems_grpc_pb2_grpc.py")
-
-        pb2_spec = importlib.util.spec_from_file_location("ems_grpc_pb2", pb2_path)
-        self._ems_grpc_pb2 = importlib.util.module_from_spec(pb2_spec)
-        sys.modules[pb2_spec.name] = self._ems_grpc_pb2
-        pb2_spec.loader.exec_module(self._ems_grpc_pb2)
-
-        pb2_grpc_spec = importlib.util.spec_from_file_location(
-            "ems_grpc_pb2_grpc",
-            pb2_grpc_path,
+        self._ems_grpc_pb2_grpc = importlib.import_module(
+            "ansible_collections.cisco.iosxr.plugins.sub_plugins.grpc.pb.ems_grpc_pb2_grpc"
         )
-        self._ems_grpc_pb2_grpc = importlib.util.module_from_spec(pb2_grpc_spec)
-        sys.modules[pb2_grpc_spec.name] = self._ems_grpc_pb2_grpc
-        pb2_grpc_spec.loader.exec_module(self._ems_grpc_pb2_grpc)
+        if not hasattr(self._ems_grpc_pb2, "DESCRIPTOR"):
+            raise AnsibleError(
+                "protobuf>=7.35.1 is required to use the IOS XR gRPC connection"
+            )
+        if not hasattr(self._ems_grpc_pb2_grpc, "gRPCConfigOperStub"):
+            raise AnsibleError(
+                "grpcio>=1.84.0 is required to use the IOS XR gRPC connection"
+            )
 
     def get_config(self, section=None):
         stub = self._ems_grpc_pb2_grpc.gRPCConfigOperStub(
