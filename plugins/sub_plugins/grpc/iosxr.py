@@ -17,10 +17,7 @@ description:
 version_added: "3.3.0"
 """
 
-import importlib
 import json
-import os
-import sys
 
 from ansible.errors import AnsibleError
 from ansible_collections.ansible.netcommon.plugins.sub_plugins.grpc.base import (
@@ -28,16 +25,14 @@ from ansible_collections.ansible.netcommon.plugins.sub_plugins.grpc.base import 
     ensure_connect,
 )
 
+from .pb import ems_grpc_pb2, ems_grpc_pb2_grpc
+
 
 class Grpc(GrpcBase):
     def __init__(self, connection):
         super(Grpc, self).__init__(connection)
-        self._ems_grpc_pb2 = importlib.import_module(
-            "ansible_collections.cisco.iosxr.plugins.sub_plugins.grpc.pb.ems_grpc_pb2",
-        )
-        self._ems_grpc_pb2_grpc = importlib.import_module(
-            "ansible_collections.cisco.iosxr.plugins.sub_plugins.grpc.pb.ems_grpc_pb2_grpc",
-        )
+        self._ems_grpc_pb2 = ems_grpc_pb2
+        self._ems_grpc_pb2_grpc = ems_grpc_pb2_grpc
         if not hasattr(self._ems_grpc_pb2, "DESCRIPTOR"):
             raise AnsibleError(
                 "protobuf>=7.35.1 is required to use the IOS XR gRPC connection",
