@@ -2,8 +2,9 @@
 """Client and server classes corresponding to protobuf-defined services."""
 # Optional runtime dependency: allow Ansible sanity to import this module.
 try:
-    from . import ems_grpc_pb2 as ems__grpc__pb2
     import grpc
+
+    from . import ems_grpc_pb2 as ems__grpc__pb2
 
     GRPC_GENERATED_VERSION = "1.84.0"
     GRPC_VERSION = grpc.__version__

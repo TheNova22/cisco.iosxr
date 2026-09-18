@@ -23,7 +23,6 @@ import os
 import sys
 
 from ansible.errors import AnsibleError
-
 from ansible_collections.ansible.netcommon.plugins.sub_plugins.grpc.base import (
     GrpcBase,
     ensure_connect,
@@ -34,18 +33,18 @@ class Grpc(GrpcBase):
     def __init__(self, connection):
         super(Grpc, self).__init__(connection)
         self._ems_grpc_pb2 = importlib.import_module(
-            "ansible_collections.cisco.iosxr.plugins.sub_plugins.grpc.pb.ems_grpc_pb2"
+            "ansible_collections.cisco.iosxr.plugins.sub_plugins.grpc.pb.ems_grpc_pb2",
         )
         self._ems_grpc_pb2_grpc = importlib.import_module(
-            "ansible_collections.cisco.iosxr.plugins.sub_plugins.grpc.pb.ems_grpc_pb2_grpc"
+            "ansible_collections.cisco.iosxr.plugins.sub_plugins.grpc.pb.ems_grpc_pb2_grpc",
         )
         if not hasattr(self._ems_grpc_pb2, "DESCRIPTOR"):
             raise AnsibleError(
-                "protobuf>=7.35.1 is required to use the IOS XR gRPC connection"
+                "protobuf>=7.35.1 is required to use the IOS XR gRPC connection",
             )
         if not hasattr(self._ems_grpc_pb2_grpc, "gRPCConfigOperStub"):
             raise AnsibleError(
-                "grpcio>=1.84.0 is required to use the IOS XR gRPC connection"
+                "grpcio>=1.84.0 is required to use the IOS XR gRPC connection",
             )
 
     def get_config(self, section=None):

@@ -26,122 +26,122 @@ try:
 
     DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
         b'\n\x0eems_grpc.proto\x12"IOSXRE'
-        b'xtensibleManagabilitySer'
+        b"xtensibleManagabilitySer"
         b'vice"4\n\rConfigGetArgs\x12\r\n'
-        b'\x05ReqId\x18\x01 \x01(\x03\x12\x14\n\x0cyangpath'
+        b"\x05ReqId\x18\x01 \x01(\x03\x12\x14\n\x0cyangpath"
         b'json\x18\x02 \x01(\t"D\n\x0eConfigGetR'
-        b'eply\x12\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x10'
-        b'\n\x08yangjson\x18\x02 \x01(\t\x12\x0e\n\x06erro'
+        b"eply\x12\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x10"
+        b"\n\x08yangjson\x18\x02 \x01(\t\x12\x0e\n\x06erro"
         b'rs\x18\x03 \x01(\t"2\n\x0bGetOperArgs\x12'
-        b'\r\n\x05ReqId\x18\x01 \x01(\x03\x12\x14\n\x0cyangpa'
+        b"\r\n\x05ReqId\x18\x01 \x01(\x03\x12\x14\n\x0cyangpa"
         b'thjson\x18\x02 \x01(\t"B\n\x0cGetOperR'
-        b'eply\x12\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x10'
-        b'\n\x08yangjson\x18\x02 \x01(\t\x12\x0e\n\x06erro'
+        b"eply\x12\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x10"
+        b"\n\x08yangjson\x18\x02 \x01(\t\x12\x0e\n\x06erro"
         b'rs\x18\x03 \x01(\t"-\n\nConfigArgs\x12\r'
-        b'\n\x05ReqId\x18\x01 \x01(\x03\x12\x10\n\x08yangjso'
+        b"\n\x05ReqId\x18\x01 \x01(\x03\x12\x10\n\x08yangjso"
         b'n\x18\x02 \x01(\t"/\n\x0bConfigReply\x12\x10'
-        b'\n\x08ResReqId\x18\x01 \x01(\x03\x12\x0e\n\x06erro'
+        b"\n\x08ResReqId\x18\x01 \x01(\x03\x12\x0e\n\x06erro"
         b'rs\x18\x02 \x01(\t"+\n\rCliConfigArg'
-        b's\x12\r\n\x05ReqId\x18\x01 \x01(\x03\x12\x0b\n\x03cli\x18'
+        b"s\x12\r\n\x05ReqId\x18\x01 \x01(\x03\x12\x0b\n\x03cli\x18"
         b'\x02 \x01(\t"2\n\x0eCliConfigReply\x12'
-        b'\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x0e\n\x06err'
+        b"\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x0e\n\x06err"
         b'ors\x18\x02 \x01(\t"A\n\x11CommitRepla'
-        b'ceArgs\x12\r\n\x05ReqId\x18\x01 \x01(\x03\x12\x0b\n'
-        b'\x03cli\x18\x02 \x01(\t\x12\x10\n\x08yangjson\x18\x03'
+        b"ceArgs\x12\r\n\x05ReqId\x18\x01 \x01(\x03\x12\x0b\n"
+        b"\x03cli\x18\x02 \x01(\t\x12\x10\n\x08yangjson\x18\x03"
         b' \x01(\t"6\n\x12CommitReplaceRep'
-        b'ly\x12\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x0e\n\x06'
+        b"ly\x12\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x0e\n\x06"
         b'errors\x18\x02 \x01(\t"+\n\tCommitMs'
-        b'g\x12\r\n\x05label\x18\x01 \x01(\t\x12\x0f\n\x07comm'
+        b"g\x12\r\n\x05label\x18\x01 \x01(\t\x12\x0f\n\x07comm"
         b'ent\x18\x02 \x01(\t"W\n\nCommitArgs\x12'
-        b':\n\x03msg\x18\x01 \x01(\x0b2-.IOSXRExte'
-        b'nsibleManagabilityServic'
-        b'e.CommitMsg\x12\r\n\x05ReqId\x18\x02 \x01'
+        b":\n\x03msg\x18\x01 \x01(\x0b2-.IOSXRExte"
+        b"nsibleManagabilityServic"
+        b"e.CommitMsg\x12\r\n\x05ReqId\x18\x02 \x01"
         b'(\x03"q\n\x0bCommitReply\x12@\n\x06res'
-        b'ult\x18\x01 \x01(\x0e20.IOSXRExtensi'
-        b'bleManagabilityService.C'
-        b'ommitResult\x12\x10\n\x08ResReqId\x18'
+        b"ult\x18\x01 \x01(\x0e20.IOSXRExtensi"
+        b"bleManagabilityService.C"
+        b"ommitResult\x12\x10\n\x08ResReqId\x18"
         b'\x02 \x01(\x03\x12\x0e\n\x06errors\x18\x03 \x01(\t"#\n'
-        b'\x12DiscardChangesArgs\x12\r\n\x05R'
+        b"\x12DiscardChangesArgs\x12\r\n\x05R"
         b'eqId\x18\x01 \x01(\x03"7\n\x13DiscardCha'
-        b'ngesReply\x12\x10\n\x08ResReqId\x18\x01 '
+        b"ngesReply\x12\x10\n\x08ResReqId\x18\x01 "
         b'\x01(\x03\x12\x0e\n\x06errors\x18\x02 \x01(\t")\n\x0bS'
-        b'howCmdArgs\x12\r\n\x05ReqId\x18\x01 \x01('
+        b"howCmdArgs\x12\r\n\x05ReqId\x18\x01 \x01("
         b'\x03\x12\x0b\n\x03cli\x18\x02 \x01(\t"D\n\x10ShowCm'
-        b'dTextReply\x12\x10\n\x08ResReqId\x18\x01'
-        b' \x01(\x03\x12\x0e\n\x06output\x18\x02 \x01(\t\x12\x0e\n\x06'
+        b"dTextReply\x12\x10\n\x08ResReqId\x18\x01"
+        b" \x01(\x03\x12\x0e\n\x06output\x18\x02 \x01(\t\x12\x0e\n\x06"
         b'errors\x18\x03 \x01(\t"H\n\x10ShowCmdJ'
-        b'SONReply\x12\x10\n\x08ResReqId\x18\x01 \x01'
-        b'(\x03\x12\x12\n\njsonoutput\x18\x02 \x01(\t\x12\x0e'
+        b"SONReply\x12\x10\n\x08ResReqId\x18\x01 \x01"
+        b"(\x03\x12\x12\n\njsonoutput\x18\x02 \x01(\t\x12\x0e"
         b'\n\x06errors\x18\x03 \x01(\t"A\n\x0eCreate'
-        b'SubsArgs\x12\r\n\x05ReqId\x18\x01 \x01(\x03\x12'
-        b'\x0e\n\x06encode\x18\x02 \x01(\x03\x12\x10\n\x08subid'
+        b"SubsArgs\x12\r\n\x05ReqId\x18\x01 \x01(\x03\x12"
+        b"\x0e\n\x06encode\x18\x02 \x01(\x03\x12\x10\n\x08subid"
         b'str\x18\x03 \x01(\t"A\n\x0fCreateSubsR'
-        b'eply\x12\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x0c'
-        b'\n\x04data\x18\x02 \x01(\x0c\x12\x0e\n\x06errors\x18\x03'
-        b' \x01(\t*3\n\x0cCommitResult\x12\n\n\x06'
-        b'CHANGE\x10\x00\x12\r\n\tNO_CHANGE\x10\x01\x12'
-        b'\x08\n\x04FAIL\x10\x022\xb1\t\n\x0egRPCConfig'
-        b'Oper\x12t\n\tGetConfig\x121.IOSX'
-        b'RExtensibleManagabilityS'
-        b'ervice.ConfigGetArgs\x1a2.I'
-        b'OSXRExtensibleManagabili'
-        b'tyService.ConfigGetReply'
-        b'0\x01\x12n\n\x0bMergeConfig\x12..IOSX'
-        b'RExtensibleManagabilityS'
-        b'ervice.ConfigArgs\x1a/.IOSX'
-        b'RExtensibleManagabilityS'
-        b'ervice.ConfigReply\x12o\n\x0cDe'
-        b'leteConfig\x12..IOSXRExtens'
-        b'ibleManagabilityService.'
-        b'ConfigArgs\x1a/.IOSXRExtens'
-        b'ibleManagabilityService.'
-        b'ConfigReply\x12p\n\rReplaceCo'
-        b'nfig\x12..IOSXRExtensibleMa'
-        b'nagabilityService.Config'
-        b'Args\x1a/.IOSXRExtensibleMa'
-        b'nagabilityService.Config'
-        b'Reply\x12r\n\tCliConfig\x121.IOS'
-        b'XRExtensibleManagability'
-        b'Service.CliConfigArgs\x1a2.'
-        b'IOSXRExtensibleManagabil'
-        b'ityService.CliConfigRepl'
-        b'y\x12~\n\rCommitReplace\x125.IOS'
-        b'XRExtensibleManagability'
-        b'Service.CommitReplaceArg'
-        b's\x1a6.IOSXRExtensibleManag'
-        b'abilityService.CommitRep'
-        b'laceReply\x12o\n\x0cCommitConfi'
-        b'g\x12..IOSXRExtensibleManag'
-        b'abilityService.CommitArg'
-        b's\x1a/.IOSXRExtensibleManag'
-        b'abilityService.CommitRep'
-        b'ly\x12\x87\x01\n\x14ConfigDiscardChan'
-        b'ges\x126.IOSXRExtensibleMan'
-        b'agabilityService.Discard'
-        b'ChangesArgs\x1a7.IOSXRExten'
-        b'sibleManagabilityService'
-        b'.DiscardChangesReply\x12n\n\x07'
-        b'GetOper\x12/.IOSXRExtensibl'
-        b'eManagabilityService.Get'
-        b'OperArgs\x1a0.IOSXRExtensib'
-        b'leManagabilityService.Ge'
-        b'tOperReply0\x01\x12w\n\nCreateSu'
-        b'bs\x122.IOSXRExtensibleMana'
-        b'gabilityService.CreateSu'
-        b'bsArgs\x1a3.IOSXRExtensible'
-        b'ManagabilityService.Crea'
-        b'teSubsReply0\x012\x86\x02\n\x08gRPCEx'
-        b'ec\x12|\n\x11ShowCmdTextOutput\x12'
-        b'/.IOSXRExtensibleManagab'
-        b'ilityService.ShowCmdArgs'
-        b'\x1a4.IOSXRExtensibleManaga'
-        b'bilityService.ShowCmdTex'
-        b'tReply0\x01\x12|\n\x11ShowCmdJSONO'
-        b'utput\x12/.IOSXRExtensibleM'
-        b'anagabilityService.ShowC'
-        b'mdArgs\x1a4.IOSXRExtensible'
-        b'ManagabilityService.Show'
-        b'CmdJSONReply0\x01b\x06proto3'
+        b"eply\x12\x10\n\x08ResReqId\x18\x01 \x01(\x03\x12\x0c"
+        b"\n\x04data\x18\x02 \x01(\x0c\x12\x0e\n\x06errors\x18\x03"
+        b" \x01(\t*3\n\x0cCommitResult\x12\n\n\x06"
+        b"CHANGE\x10\x00\x12\r\n\tNO_CHANGE\x10\x01\x12"
+        b"\x08\n\x04FAIL\x10\x022\xb1\t\n\x0egRPCConfig"
+        b"Oper\x12t\n\tGetConfig\x121.IOSX"
+        b"RExtensibleManagabilityS"
+        b"ervice.ConfigGetArgs\x1a2.I"
+        b"OSXRExtensibleManagabili"
+        b"tyService.ConfigGetReply"
+        b"0\x01\x12n\n\x0bMergeConfig\x12..IOSX"
+        b"RExtensibleManagabilityS"
+        b"ervice.ConfigArgs\x1a/.IOSX"
+        b"RExtensibleManagabilityS"
+        b"ervice.ConfigReply\x12o\n\x0cDe"
+        b"leteConfig\x12..IOSXRExtens"
+        b"ibleManagabilityService."
+        b"ConfigArgs\x1a/.IOSXRExtens"
+        b"ibleManagabilityService."
+        b"ConfigReply\x12p\n\rReplaceCo"
+        b"nfig\x12..IOSXRExtensibleMa"
+        b"nagabilityService.Config"
+        b"Args\x1a/.IOSXRExtensibleMa"
+        b"nagabilityService.Config"
+        b"Reply\x12r\n\tCliConfig\x121.IOS"
+        b"XRExtensibleManagability"
+        b"Service.CliConfigArgs\x1a2."
+        b"IOSXRExtensibleManagabil"
+        b"ityService.CliConfigRepl"
+        b"y\x12~\n\rCommitReplace\x125.IOS"
+        b"XRExtensibleManagability"
+        b"Service.CommitReplaceArg"
+        b"s\x1a6.IOSXRExtensibleManag"
+        b"abilityService.CommitRep"
+        b"laceReply\x12o\n\x0cCommitConfi"
+        b"g\x12..IOSXRExtensibleManag"
+        b"abilityService.CommitArg"
+        b"s\x1a/.IOSXRExtensibleManag"
+        b"abilityService.CommitRep"
+        b"ly\x12\x87\x01\n\x14ConfigDiscardChan"
+        b"ges\x126.IOSXRExtensibleMan"
+        b"agabilityService.Discard"
+        b"ChangesArgs\x1a7.IOSXRExten"
+        b"sibleManagabilityService"
+        b".DiscardChangesReply\x12n\n\x07"
+        b"GetOper\x12/.IOSXRExtensibl"
+        b"eManagabilityService.Get"
+        b"OperArgs\x1a0.IOSXRExtensib"
+        b"leManagabilityService.Ge"
+        b"tOperReply0\x01\x12w\n\nCreateSu"
+        b"bs\x122.IOSXRExtensibleMana"
+        b"gabilityService.CreateSu"
+        b"bsArgs\x1a3.IOSXRExtensible"
+        b"ManagabilityService.Crea"
+        b"teSubsReply0\x012\x86\x02\n\x08gRPCEx"
+        b"ec\x12|\n\x11ShowCmdTextOutput\x12"
+        b"/.IOSXRExtensibleManagab"
+        b"ilityService.ShowCmdArgs"
+        b"\x1a4.IOSXRExtensibleManaga"
+        b"bilityService.ShowCmdTex"
+        b"tReply0\x01\x12|\n\x11ShowCmdJSONO"
+        b"utput\x12/.IOSXRExtensibleM"
+        b"anagabilityService.ShowC"
+        b"mdArgs\x1a4.IOSXRExtensible"
+        b"ManagabilityService.Show"
+        b"CmdJSONReply0\x01b\x06proto3",
     )
 
     _globals = globals()
