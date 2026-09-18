@@ -17,6 +17,7 @@ description:
 version_added: "3.3.0"
 """
 
+import importlib.util
 import json
 import os
 import sys
@@ -30,29 +31,28 @@ from ansible_collections.ansible.netcommon.plugins.sub_plugins.grpc.base import 
 class Grpc(GrpcBase):
     def __init__(self, connection):
         super(Grpc, self).__init__(connection)
-        module_name = "ems_grpc_pb2"
-        module_path = os.path.join(
+        pb_path = os.path.join(
             os.path.dirname(os.path.realpath(__file__)),
-            "pb/ems_grpc_pb2.py",
+            "pb",
         )
-        if sys.version_info[0] == 3 and sys.version_info[1] >= 5:
-            import importlib.util
+        pb2_path = os.path.join(pb_path, "ems_grpc_pb2.py")
+        pb2_grpc_path = os.path.join(pb_path, "ems_grpc_pb2_grpc.py")
 
-            spec = importlib.util.spec_from_file_location(module_name, module_path)
-            self._ems_grpc_pb2 = importlib.util.module_from_spec(spec)
-            spec.loader.exec_module(self._ems_grpc_pb2)
-        elif sys.version_info[0] == 3 and sys.version_info[1] < 5:
-            import importlib.machinery
+        pb2_spec = importlib.util.spec_from_file_location("ems_grpc_pb2", pb2_path)
+        self._ems_grpc_pb2 = importlib.util.module_from_spec(pb2_spec)
+        sys.modules[pb2_spec.name] = self._ems_grpc_pb2
+        pb2_spec.loader.exec_module(self._ems_grpc_pb2)
 
-            loader = importlib.machinery.SourceFileLoader(module_name, module_path)
-            self._ems_grpc_pb2 = loader.load_module()
-        elif sys.version_info[0] == 2:
-            import imp
-
-            self._ems_grpc_pb2 = imp.load_source(module_name, module_path)
+        pb2_grpc_spec = importlib.util.spec_from_file_location(
+            "ems_grpc_pb2_grpc",
+            pb2_grpc_path,
+        )
+        self._ems_grpc_pb2_grpc = importlib.util.module_from_spec(pb2_grpc_spec)
+        sys.modules[pb2_grpc_spec.name] = self._ems_grpc_pb2_grpc
+        pb2_grpc_spec.loader.exec_module(self._ems_grpc_pb2_grpc)
 
     def get_config(self, section=None):
-        stub = self._ems_grpc_pb2.beta_create_gRPCConfigOper_stub(
+        stub = self._ems_grpc_pb2_grpc.gRPCConfigOperStub(
             self._connection._channel,
         )
         message = self._ems_grpc_pb2.ConfigGetArgs(yangpathjson=section)
@@ -68,7 +68,7 @@ class Grpc(GrpcBase):
         return output
 
     def get(self, section=None):
-        stub = self._ems_grpc_pb2.beta_create_gRPCConfigOper_stub(
+        stub = self._ems_grpc_pb2_grpc.gRPCConfigOperStub(
             self._connection._channel,
         )
         message = self._ems_grpc_pb2.GetOperArgs(yangpathjson=section)
@@ -92,7 +92,7 @@ class Grpc(GrpcBase):
         :rtype: Response object
         """
         path = json.dumps(path)
-        stub = self._ems_grpc_pb2.beta_create_gRPCConfigOper_stub(
+        stub = self._ems_grpc_pb2_grpc.gRPCConfigOperStub(
             self._connection._channel,
         )
         message = self._ems_grpc_pb2.ConfigArgs(yangjson=path)
@@ -115,7 +115,7 @@ class Grpc(GrpcBase):
         :rtype: Response object
         """
         path = json.dumps(path)
-        stub = self._ems_grpc_pb2.beta_create_gRPCConfigOper_stub(
+        stub = self._ems_grpc_pb2_grpc.gRPCConfigOperStub(
             self._connection._channel,
         )
         message = self._ems_grpc_pb2.ConfigArgs(yangjson=path)
@@ -138,7 +138,7 @@ class Grpc(GrpcBase):
         :rtype: Response object
         """
         path = json.dumps(path)
-        stub = self._ems_grpc_pb2.beta_create_gRPCConfigOper_stub(
+        stub = self._ems_grpc_pb2_grpc.gRPCConfigOperStub(
             self._connection._channel,
         )
         message = self._ems_grpc_pb2.ConfigArgs(yangjson=path)
@@ -158,7 +158,7 @@ class Grpc(GrpcBase):
             raise ValueError("command value must be provided")
 
         output = {"response": "", "error": ""}
-        stub = self._ems_grpc_pb2.beta_create_gRPCExec_stub(
+        stub = self._ems_grpc_pb2_grpc.gRPCExecStub(
             self._connection._channel,
         )
 
