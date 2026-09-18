@@ -1,0 +1,3 @@
+---
+trivial:
+  - Update grpc sub_plugin to support latest protobuf and remove it from ignore-* sanity
