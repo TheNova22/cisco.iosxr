@@ -47,7 +47,7 @@ class Grpc(GrpcBase):
             self._connection._channel,
         )
         message = self._ems_grpc_pb2.ConfigGetArgs(yangpathjson=section)
-        responses = stub.GetConfig(
+        responses = stub.get_config(
             message,
             self._connection._timeout,
             metadata=self._connection._login_credentials,
@@ -63,7 +63,7 @@ class Grpc(GrpcBase):
             self._connection._channel,
         )
         message = self._ems_grpc_pb2.GetOperArgs(yangpathjson=section)
-        responses = stub.GetOper(
+        responses = stub.get_oper(
             message,
             self._connection._timeout,
             metadata=self._connection._login_credentials,
@@ -87,7 +87,7 @@ class Grpc(GrpcBase):
             self._connection._channel,
         )
         message = self._ems_grpc_pb2.ConfigArgs(yangjson=path)
-        response = stub.MergeConfig(
+        response = stub.merge_config(
             message,
             self._connection._timeout,
             metadata=self._connection._login_credentials,
@@ -110,7 +110,7 @@ class Grpc(GrpcBase):
             self._connection._channel,
         )
         message = self._ems_grpc_pb2.ConfigArgs(yangjson=path)
-        response = stub.ReplaceConfig(
+        response = stub.replace_config(
             message,
             self._connection._timeout,
             metadata=self._connection._login_credentials,
@@ -133,7 +133,7 @@ class Grpc(GrpcBase):
             self._connection._channel,
         )
         message = self._ems_grpc_pb2.ConfigArgs(yangjson=path)
-        response = stub.DeleteConfig(
+        response = stub.delete_config(
             message,
             self._connection._timeout,
             metadata=self._connection._login_credentials,
@@ -155,7 +155,7 @@ class Grpc(GrpcBase):
 
         message = self._ems_grpc_pb2.ShowCmdArgs(cli=command)
         if display == "text":
-            responses = stub.ShowCmdTextOutput(
+            responses = stub.show_cmd_text_output(
                 message,
                 self._connection._timeout,
                 metadata=self._connection._login_credentials,
@@ -164,7 +164,7 @@ class Grpc(GrpcBase):
                 output["response"] += response.output
                 output["error"] += response.errors
         else:
-            responses = stub.ShowCmdJSONOutput(
+            responses = stub.show_cmd_json_output(
                 message,
                 self._connection._timeout,
                 metadata=self._connection._login_credentials,

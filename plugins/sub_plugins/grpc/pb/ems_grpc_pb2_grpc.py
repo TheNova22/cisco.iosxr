@@ -35,61 +35,61 @@ try:
             Args:
                 channel: A grpc.Channel.
             """
-            self.GetConfig = channel.unary_stream(
+            self.get_config = channel.unary_stream(
                 "/IOSXRExtensibleManagabilityService.gRPCConfigOper/GetConfig",
                 request_serializer=ems__grpc__pb2.ConfigGetArgs.SerializeToString,
                 response_deserializer=ems__grpc__pb2.ConfigGetReply.FromString,
                 _registered_method=True,
             )
-            self.MergeConfig = channel.unary_unary(
+            self.merge_config = channel.unary_unary(
                 "/IOSXRExtensibleManagabilityService.gRPCConfigOper/MergeConfig",
                 request_serializer=ems__grpc__pb2.ConfigArgs.SerializeToString,
                 response_deserializer=ems__grpc__pb2.ConfigReply.FromString,
                 _registered_method=True,
             )
-            self.DeleteConfig = channel.unary_unary(
+            self.delete_config = channel.unary_unary(
                 "/IOSXRExtensibleManagabilityService.gRPCConfigOper/DeleteConfig",
                 request_serializer=ems__grpc__pb2.ConfigArgs.SerializeToString,
                 response_deserializer=ems__grpc__pb2.ConfigReply.FromString,
                 _registered_method=True,
             )
-            self.ReplaceConfig = channel.unary_unary(
+            self.replace_config = channel.unary_unary(
                 "/IOSXRExtensibleManagabilityService.gRPCConfigOper/ReplaceConfig",
                 request_serializer=ems__grpc__pb2.ConfigArgs.SerializeToString,
                 response_deserializer=ems__grpc__pb2.ConfigReply.FromString,
                 _registered_method=True,
             )
-            self.CliConfig = channel.unary_unary(
+            self.cli_config = channel.unary_unary(
                 "/IOSXRExtensibleManagabilityService.gRPCConfigOper/CliConfig",
                 request_serializer=ems__grpc__pb2.CliConfigArgs.SerializeToString,
                 response_deserializer=ems__grpc__pb2.CliConfigReply.FromString,
                 _registered_method=True,
             )
-            self.CommitReplace = channel.unary_unary(
+            self.commit_replace = channel.unary_unary(
                 "/IOSXRExtensibleManagabilityService.gRPCConfigOper/CommitReplace",
                 request_serializer=ems__grpc__pb2.CommitReplaceArgs.SerializeToString,
                 response_deserializer=ems__grpc__pb2.CommitReplaceReply.FromString,
                 _registered_method=True,
             )
-            self.CommitConfig = channel.unary_unary(
+            self.commit_config = channel.unary_unary(
                 "/IOSXRExtensibleManagabilityService.gRPCConfigOper/CommitConfig",
                 request_serializer=ems__grpc__pb2.CommitArgs.SerializeToString,
                 response_deserializer=ems__grpc__pb2.CommitReply.FromString,
                 _registered_method=True,
             )
-            self.ConfigDiscardChanges = channel.unary_unary(
+            self.config_discard_changes = channel.unary_unary(
                 "/IOSXRExtensibleManagabilityService.gRPCConfigOper/ConfigDiscardChanges",
                 request_serializer=ems__grpc__pb2.DiscardChangesArgs.SerializeToString,
                 response_deserializer=ems__grpc__pb2.DiscardChangesReply.FromString,
                 _registered_method=True,
             )
-            self.GetOper = channel.unary_stream(
+            self.get_oper = channel.unary_stream(
                 "/IOSXRExtensibleManagabilityService.gRPCConfigOper/GetOper",
                 request_serializer=ems__grpc__pb2.GetOperArgs.SerializeToString,
                 response_deserializer=ems__grpc__pb2.GetOperReply.FromString,
                 _registered_method=True,
             )
-            self.CreateSubs = channel.unary_stream(
+            self.create_subs = channel.unary_stream(
                 "/IOSXRExtensibleManagabilityService.gRPCConfigOper/CreateSubs",
                 request_serializer=ems__grpc__pb2.CreateSubsArgs.SerializeToString,
                 response_deserializer=ems__grpc__pb2.CreateSubsReply.FromString,
@@ -99,115 +99,115 @@ try:
     class gRPCConfigOperServicer:
         """Missing associated documentation comment in .proto file."""
 
-        def GetConfig(self, request, context):
+        def get_config(self, request, context):
             """Missing associated documentation comment in .proto file."""
             context.set_code(grpc.StatusCode.UNIMPLEMENTED)
             context.set_details("Method not implemented!")
             raise NotImplementedError("Method not implemented!")
 
-        def MergeConfig(self, request, context):
+        def merge_config(self, request, context):
             """Missing associated documentation comment in .proto file."""
             context.set_code(grpc.StatusCode.UNIMPLEMENTED)
             context.set_details("Method not implemented!")
             raise NotImplementedError("Method not implemented!")
 
-        def DeleteConfig(self, request, context):
+        def delete_config(self, request, context):
             """Missing associated documentation comment in .proto file."""
             context.set_code(grpc.StatusCode.UNIMPLEMENTED)
             context.set_details("Method not implemented!")
             raise NotImplementedError("Method not implemented!")
 
-        def ReplaceConfig(self, request, context):
+        def replace_config(self, request, context):
             """Missing associated documentation comment in .proto file."""
             context.set_code(grpc.StatusCode.UNIMPLEMENTED)
             context.set_details("Method not implemented!")
             raise NotImplementedError("Method not implemented!")
 
-        def CliConfig(self, request, context):
+        def cli_config(self, request, context):
             """Missing associated documentation comment in .proto file."""
             context.set_code(grpc.StatusCode.UNIMPLEMENTED)
             context.set_details("Method not implemented!")
             raise NotImplementedError("Method not implemented!")
 
-        def CommitReplace(self, request, context):
+        def commit_replace(self, request, context):
             """Missing associated documentation comment in .proto file."""
             context.set_code(grpc.StatusCode.UNIMPLEMENTED)
             context.set_details("Method not implemented!")
             raise NotImplementedError("Method not implemented!")
 
-        def CommitConfig(self, request, context):
+        def commit_config(self, request, context):
             """Missing associated documentation comment in .proto file."""
             context.set_code(grpc.StatusCode.UNIMPLEMENTED)
             context.set_details("Method not implemented!")
             raise NotImplementedError("Method not implemented!")
 
-        def ConfigDiscardChanges(self, request, context):
+        def config_discard_changes(self, request, context):
             """Missing associated documentation comment in .proto file."""
             context.set_code(grpc.StatusCode.UNIMPLEMENTED)
             context.set_details("Method not implemented!")
             raise NotImplementedError("Method not implemented!")
 
-        def GetOper(self, request, context):
+        def get_oper(self, request, context):
             """Missing associated documentation comment in .proto file."""
             context.set_code(grpc.StatusCode.UNIMPLEMENTED)
             context.set_details("Method not implemented!")
             raise NotImplementedError("Method not implemented!")
 
-        def CreateSubs(self, request, context):
+        def create_subs(self, request, context):
             """Missing associated documentation comment in .proto file."""
             context.set_code(grpc.StatusCode.UNIMPLEMENTED)
             context.set_details("Method not implemented!")
             raise NotImplementedError("Method not implemented!")
 
-    def add_gRPCConfigOperServicer_to_server(servicer, server):
+    def add_grpc_config_oper_servicer_to_server(servicer, server):
         rpc_method_handlers = {
             "GetConfig": grpc.unary_stream_rpc_method_handler(
-                servicer.GetConfig,
+                servicer.get_config,
                 request_deserializer=ems__grpc__pb2.ConfigGetArgs.FromString,
                 response_serializer=ems__grpc__pb2.ConfigGetReply.SerializeToString,
             ),
             "MergeConfig": grpc.unary_unary_rpc_method_handler(
-                servicer.MergeConfig,
+                servicer.merge_config,
                 request_deserializer=ems__grpc__pb2.ConfigArgs.FromString,
                 response_serializer=ems__grpc__pb2.ConfigReply.SerializeToString,
             ),
             "DeleteConfig": grpc.unary_unary_rpc_method_handler(
-                servicer.DeleteConfig,
+                servicer.delete_config,
                 request_deserializer=ems__grpc__pb2.ConfigArgs.FromString,
                 response_serializer=ems__grpc__pb2.ConfigReply.SerializeToString,
             ),
             "ReplaceConfig": grpc.unary_unary_rpc_method_handler(
-                servicer.ReplaceConfig,
+                servicer.replace_config,
                 request_deserializer=ems__grpc__pb2.ConfigArgs.FromString,
                 response_serializer=ems__grpc__pb2.ConfigReply.SerializeToString,
             ),
             "CliConfig": grpc.unary_unary_rpc_method_handler(
-                servicer.CliConfig,
+                servicer.cli_config,
                 request_deserializer=ems__grpc__pb2.CliConfigArgs.FromString,
                 response_serializer=ems__grpc__pb2.CliConfigReply.SerializeToString,
             ),
             "CommitReplace": grpc.unary_unary_rpc_method_handler(
-                servicer.CommitReplace,
+                servicer.commit_replace,
                 request_deserializer=ems__grpc__pb2.CommitReplaceArgs.FromString,
                 response_serializer=ems__grpc__pb2.CommitReplaceReply.SerializeToString,
             ),
             "CommitConfig": grpc.unary_unary_rpc_method_handler(
-                servicer.CommitConfig,
+                servicer.commit_config,
                 request_deserializer=ems__grpc__pb2.CommitArgs.FromString,
                 response_serializer=ems__grpc__pb2.CommitReply.SerializeToString,
             ),
             "ConfigDiscardChanges": grpc.unary_unary_rpc_method_handler(
-                servicer.ConfigDiscardChanges,
+                servicer.config_discard_changes,
                 request_deserializer=ems__grpc__pb2.DiscardChangesArgs.FromString,
                 response_serializer=ems__grpc__pb2.DiscardChangesReply.SerializeToString,
             ),
             "GetOper": grpc.unary_stream_rpc_method_handler(
-                servicer.GetOper,
+                servicer.get_oper,
                 request_deserializer=ems__grpc__pb2.GetOperArgs.FromString,
                 response_serializer=ems__grpc__pb2.GetOperReply.SerializeToString,
             ),
             "CreateSubs": grpc.unary_stream_rpc_method_handler(
-                servicer.CreateSubs,
+                servicer.create_subs,
                 request_deserializer=ems__grpc__pb2.CreateSubsArgs.FromString,
                 response_serializer=ems__grpc__pb2.CreateSubsReply.SerializeToString,
             ),
@@ -227,7 +227,7 @@ try:
         """Missing associated documentation comment in .proto file."""
 
         @staticmethod
-        def GetConfig(
+        def get_config(
             request,
             target,
             options=(),
@@ -257,7 +257,7 @@ try:
             )
 
         @staticmethod
-        def MergeConfig(
+        def merge_config(
             request,
             target,
             options=(),
@@ -287,7 +287,7 @@ try:
             )
 
         @staticmethod
-        def DeleteConfig(
+        def delete_config(
             request,
             target,
             options=(),
@@ -317,7 +317,7 @@ try:
             )
 
         @staticmethod
-        def ReplaceConfig(
+        def replace_config(
             request,
             target,
             options=(),
@@ -347,7 +347,7 @@ try:
             )
 
         @staticmethod
-        def CliConfig(
+        def cli_config(
             request,
             target,
             options=(),
@@ -377,7 +377,7 @@ try:
             )
 
         @staticmethod
-        def CommitReplace(
+        def commit_replace(
             request,
             target,
             options=(),
@@ -407,7 +407,7 @@ try:
             )
 
         @staticmethod
-        def CommitConfig(
+        def commit_config(
             request,
             target,
             options=(),
@@ -437,7 +437,7 @@ try:
             )
 
         @staticmethod
-        def ConfigDiscardChanges(
+        def config_discard_changes(
             request,
             target,
             options=(),
@@ -467,7 +467,7 @@ try:
             )
 
         @staticmethod
-        def GetOper(
+        def get_oper(
             request,
             target,
             options=(),
@@ -497,7 +497,7 @@ try:
             )
 
         @staticmethod
-        def CreateSubs(
+        def create_subs(
             request,
             target,
             options=(),
@@ -535,13 +535,13 @@ try:
             Args:
                 channel: A grpc.Channel.
             """
-            self.ShowCmdTextOutput = channel.unary_stream(
+            self.show_cmd_text_output = channel.unary_stream(
                 "/IOSXRExtensibleManagabilityService.gRPCExec/ShowCmdTextOutput",
                 request_serializer=ems__grpc__pb2.ShowCmdArgs.SerializeToString,
                 response_deserializer=ems__grpc__pb2.ShowCmdTextReply.FromString,
                 _registered_method=True,
             )
-            self.ShowCmdJSONOutput = channel.unary_stream(
+            self.show_cmd_json_output = channel.unary_stream(
                 "/IOSXRExtensibleManagabilityService.gRPCExec/ShowCmdJSONOutput",
                 request_serializer=ems__grpc__pb2.ShowCmdArgs.SerializeToString,
                 response_deserializer=ems__grpc__pb2.ShowCmdJSONReply.FromString,
@@ -551,27 +551,27 @@ try:
     class gRPCExecServicer:
         """Missing associated documentation comment in .proto file."""
 
-        def ShowCmdTextOutput(self, request, context):
+        def show_cmd_text_output(self, request, context):
             """Missing associated documentation comment in .proto file."""
             context.set_code(grpc.StatusCode.UNIMPLEMENTED)
             context.set_details("Method not implemented!")
             raise NotImplementedError("Method not implemented!")
 
-        def ShowCmdJSONOutput(self, request, context):
+        def show_cmd_json_output(self, request, context):
             """Missing associated documentation comment in .proto file."""
             context.set_code(grpc.StatusCode.UNIMPLEMENTED)
             context.set_details("Method not implemented!")
             raise NotImplementedError("Method not implemented!")
 
-    def add_gRPCExecServicer_to_server(servicer, server):
+    def add_grpc_exec_servicer_to_server(servicer, server):
         rpc_method_handlers = {
             "ShowCmdTextOutput": grpc.unary_stream_rpc_method_handler(
-                servicer.ShowCmdTextOutput,
+                servicer.show_cmd_text_output,
                 request_deserializer=ems__grpc__pb2.ShowCmdArgs.FromString,
                 response_serializer=ems__grpc__pb2.ShowCmdTextReply.SerializeToString,
             ),
             "ShowCmdJSONOutput": grpc.unary_stream_rpc_method_handler(
-                servicer.ShowCmdJSONOutput,
+                servicer.show_cmd_json_output,
                 request_deserializer=ems__grpc__pb2.ShowCmdArgs.FromString,
                 response_serializer=ems__grpc__pb2.ShowCmdJSONReply.SerializeToString,
             ),
@@ -591,7 +591,7 @@ try:
         """Missing associated documentation comment in .proto file."""
 
         @staticmethod
-        def ShowCmdTextOutput(
+        def show_cmd_text_output(
             request,
             target,
             options=(),
@@ -621,7 +621,7 @@ try:
             )
 
         @staticmethod
-        def ShowCmdJSONOutput(
+        def show_cmd_json_output(
             request,
             target,
             options=(),
