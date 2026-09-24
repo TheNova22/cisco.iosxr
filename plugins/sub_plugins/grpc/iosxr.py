@@ -37,13 +37,13 @@ class Grpc(GrpcBase):
             raise AnsibleError(
                 "protobuf>=7.35.1 is required to use the IOS XR gRPC connection",
             )
-        if not hasattr(self._ems_grpc_pb2_grpc, "gRPCConfigOperStub"):
+        if not hasattr(self._ems_grpc_pb2_grpc, "GrpcConfigOperStub"):
             raise AnsibleError(
                 "grpcio>=1.84.0 is required to use the IOS XR gRPC connection",
             )
 
     def get_config(self, section=None):
-        stub = self._ems_grpc_pb2_grpc.gRPCConfigOperStub(
+        stub = self._ems_grpc_pb2_grpc.GrpcConfigOperStub(
             self._connection._channel,
         )
         message = self._ems_grpc_pb2.ConfigGetArgs(yangpathjson=section)
@@ -59,7 +59,7 @@ class Grpc(GrpcBase):
         return output
 
     def get(self, section=None):
-        stub = self._ems_grpc_pb2_grpc.gRPCConfigOperStub(
+        stub = self._ems_grpc_pb2_grpc.GrpcConfigOperStub(
             self._connection._channel,
         )
         message = self._ems_grpc_pb2.GetOperArgs(yangpathjson=section)
@@ -83,7 +83,7 @@ class Grpc(GrpcBase):
         :rtype: Response object
         """
         path = json.dumps(path)
-        stub = self._ems_grpc_pb2_grpc.gRPCConfigOperStub(
+        stub = self._ems_grpc_pb2_grpc.GrpcConfigOperStub(
             self._connection._channel,
         )
         message = self._ems_grpc_pb2.ConfigArgs(yangjson=path)
@@ -106,7 +106,7 @@ class Grpc(GrpcBase):
         :rtype: Response object
         """
         path = json.dumps(path)
-        stub = self._ems_grpc_pb2_grpc.gRPCConfigOperStub(
+        stub = self._ems_grpc_pb2_grpc.GrpcConfigOperStub(
             self._connection._channel,
         )
         message = self._ems_grpc_pb2.ConfigArgs(yangjson=path)
@@ -129,7 +129,7 @@ class Grpc(GrpcBase):
         :rtype: Response object
         """
         path = json.dumps(path)
-        stub = self._ems_grpc_pb2_grpc.gRPCConfigOperStub(
+        stub = self._ems_grpc_pb2_grpc.GrpcConfigOperStub(
             self._connection._channel,
         )
         message = self._ems_grpc_pb2.ConfigArgs(yangjson=path)
@@ -149,7 +149,7 @@ class Grpc(GrpcBase):
             raise ValueError("command value must be provided")
 
         output = {"response": "", "error": ""}
-        stub = self._ems_grpc_pb2_grpc.gRPCExecStub(
+        stub = self._ems_grpc_pb2_grpc.GrpcExecStub(
             self._connection._channel,
         )
 
