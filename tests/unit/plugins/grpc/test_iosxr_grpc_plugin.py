@@ -51,7 +51,8 @@ def test_generated_stubs_expose_snake_case_python_methods():
 
 
 def test_get_config_and_get_use_snake_case_stub_methods(grpc_plugin):
-    plugin, config_stub, _ = grpc_plugin
+    plugin = grpc_plugin[0]
+    config_stub = grpc_plugin[1]
     config_stub.get_config.return_value = [
         SimpleNamespace(yangjson="config", errors=""),
     ]
@@ -78,7 +79,8 @@ def test_config_updates_use_snake_case_stub_methods(
     method_name,
     plugin_method,
 ):
-    plugin, config_stub, _ = grpc_plugin
+    plugin = grpc_plugin[0]
+    config_stub = grpc_plugin[1]
     getattr(config_stub, method_name).return_value = SimpleNamespace(errors="")
 
     assert getattr(plugin, plugin_method)({"interface": "Loopback0"}) == ""
@@ -86,7 +88,8 @@ def test_config_updates_use_snake_case_stub_methods(
 
 
 def test_run_cli_uses_snake_case_exec_methods(grpc_plugin):
-    plugin, _, exec_stub = grpc_plugin
+    plugin = grpc_plugin[0]
+    exec_stub = grpc_plugin[2]
     exec_stub.show_cmd_text_output.return_value = [
         SimpleNamespace(output="IOS XR", errors=""),
     ]
@@ -99,6 +102,31 @@ def test_run_cli_uses_snake_case_exec_methods(grpc_plugin):
         "response": '{"hostname": "xr"}',
         "error": "",
     }
+
+
+def test_run_cli_requires_a_command(grpc_plugin):
+    plugin = grpc_plugin[0]
+
+    with pytest.raises(ValueError, match="command value must be provided"):
+        plugin.run_cli()
+
+
+@pytest.mark.parametrize("method_name", ["merge_config", "replace_config", "delete_config"])
+def test_config_updates_return_none_without_a_grpc_response(grpc_plugin, method_name):
+    plugin = grpc_plugin[0]
+    config_stub = grpc_plugin[1]
+    getattr(config_stub, method_name).return_value = None
+
+    assert getattr(plugin, method_name)({"interface": "Loopback0"}) is None
+
+
+def test_get_capabilities_reports_grpc_features(grpc_plugin):
+    plugin = grpc_plugin[0]
+
+    result = plugin.get_capabilities()
+
+    assert result["network_api"] == "ansible.netcommon.grpc"
+    assert result["server_capabilities"]["supports_cli_command"] is True
 
 
 def test_servicer_request_parameters_remain_compatible_with_grpc_handlers():

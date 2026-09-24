@@ -99,62 +99,72 @@ try:
     class GrpcConfigOperServicer:
         """Missing associated documentation comment in .proto file."""
 
-        def get_config(self, _, context):
+        def get_config(self, request, context):
             """Missing associated documentation comment in .proto file."""
+            del request
             context.set_code(grpc.StatusCode.UNIMPLEMENTED)
             context.set_details("Method not implemented!")
             raise NotImplementedError("Method not implemented!")
 
-        def merge_config(self, _, context):
+        def merge_config(self, request, context):
             """Missing associated documentation comment in .proto file."""
+            del request
             context.set_code(grpc.StatusCode.UNIMPLEMENTED)
             context.set_details("Method not implemented!")
             raise NotImplementedError("Method not implemented!")
 
-        def delete_config(self, _, context):
+        def delete_config(self, request, context):
             """Missing associated documentation comment in .proto file."""
+            del request
             context.set_code(grpc.StatusCode.UNIMPLEMENTED)
             context.set_details("Method not implemented!")
             raise NotImplementedError("Method not implemented!")
 
-        def replace_config(self, _, context):
+        def replace_config(self, request, context):
             """Missing associated documentation comment in .proto file."""
+            del request
             context.set_code(grpc.StatusCode.UNIMPLEMENTED)
             context.set_details("Method not implemented!")
             raise NotImplementedError("Method not implemented!")
 
-        def cli_config(self, _, context):
+        def cli_config(self, request, context):
             """Missing associated documentation comment in .proto file."""
+            del request
             context.set_code(grpc.StatusCode.UNIMPLEMENTED)
             context.set_details("Method not implemented!")
             raise NotImplementedError("Method not implemented!")
 
-        def commit_replace(self, _, context):
+        def commit_replace(self, request, context):
             """Missing associated documentation comment in .proto file."""
+            del request
             context.set_code(grpc.StatusCode.UNIMPLEMENTED)
             context.set_details("Method not implemented!")
             raise NotImplementedError("Method not implemented!")
 
-        def commit_config(self, _, context):
+        def commit_config(self, request, context):
             """Missing associated documentation comment in .proto file."""
+            del request
             context.set_code(grpc.StatusCode.UNIMPLEMENTED)
             context.set_details("Method not implemented!")
             raise NotImplementedError("Method not implemented!")
 
-        def config_discard_changes(self, _, context):
+        def config_discard_changes(self, request, context):
             """Missing associated documentation comment in .proto file."""
+            del request
             context.set_code(grpc.StatusCode.UNIMPLEMENTED)
             context.set_details("Method not implemented!")
             raise NotImplementedError("Method not implemented!")
 
-        def get_oper(self, _, context):
+        def get_oper(self, request, context):
             """Missing associated documentation comment in .proto file."""
+            del request
             context.set_code(grpc.StatusCode.UNIMPLEMENTED)
             context.set_details("Method not implemented!")
             raise NotImplementedError("Method not implemented!")
 
-        def create_subs(self, _, context):
+        def create_subs(self, request, context):
             """Missing associated documentation comment in .proto file."""
+            del request
             context.set_code(grpc.StatusCode.UNIMPLEMENTED)
             context.set_details("Method not implemented!")
             raise NotImplementedError("Method not implemented!")
@@ -551,14 +561,16 @@ try:
     class GrpcExecServicer:
         """Missing associated documentation comment in .proto file."""
 
-        def show_cmd_text_output(self, _, context):
+        def show_cmd_text_output(self, request, context):
             """Missing associated documentation comment in .proto file."""
+            del request
             context.set_code(grpc.StatusCode.UNIMPLEMENTED)
             context.set_details("Method not implemented!")
             raise NotImplementedError("Method not implemented!")
 
-        def show_cmd_json_output(self, _, context):
+        def show_cmd_json_output(self, request, context):
             """Missing associated documentation comment in .proto file."""
+            del request
             context.set_code(grpc.StatusCode.UNIMPLEMENTED)
             context.set_details("Method not implemented!")
             raise NotImplementedError("Method not implemented!")

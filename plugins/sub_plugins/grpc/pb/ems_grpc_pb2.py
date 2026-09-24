@@ -147,7 +147,7 @@ try:
     _globals = globals()
     _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
     _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, "ems_grpc_pb2", _globals)
-    if not _descriptor._USE_C_DESCRIPTORS:
+    if not _descriptor._USE_C_DESCRIPTORS:  # pragma: no cover
         DESCRIPTOR._loaded_options = None
         _globals["_COMMITRESULT"]._serialized_start = 1278
         _globals["_COMMITRESULT"]._serialized_end = 1329
