@@ -1,3 +1,5 @@
 ---
-trivial:
-  - Update grpc sub_plugin to support latest protobuf and remove it from ignore-* sanity
+breaking_changes:
+  - The gRPC sub-plugin generated stubs require ``protobuf>=7.35.1,<8`` and
+    ``grpcio>=1.84.0``. These minimums are enforced by the protobuf
+    and gRPC client code.
